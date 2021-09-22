@@ -1,0 +1,102 @@
+object MainForm: TMainForm
+  Left = 0
+  Top = 0
+  Caption = 'Barcode Reader'
+  ClientHeight = 567
+  ClientWidth = 384
+  FormFactor.Width = 1440
+  FormFactor.Height = 900
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 3
+  object HeaderToolBar: TToolBar
+    Size.Width = 384.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object HeaderLabel: TLabel
+      Align = Contents
+      Size.Width = 384.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'toollabel'
+      TextSettings.HorzAlign = Center
+      Text = 'Barcode Reader'
+    end
+  end
+  object FooterToolBar: TToolBar
+    Align = Bottom
+    Position.Y = 519.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'bottomtoolbar'
+    TabOrder = 2
+    object ScanButton: TButton
+      Action = ScanAction
+      Align = Client
+      Enabled = True
+      StyledSettings = [Family, Size, FontColor]
+      ImageIndex = -1
+      Size.Width = 384.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+  object CodeLabel: TLabel
+    Align = Client
+    StyledSettings = [Style, FontColor]
+    HitTest = True
+    Scale.X = 2.000000000000000000
+    Scale.Y = 4.000000000000000000
+    Size.Width = 192.000000000000000000
+    Size.Height = 105.750000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Courier New'
+    TextSettings.Font.Size = 20.000000000000000000
+    TextSettings.HorzAlign = Center
+    Text = '0000000000000'
+    OnClick = CodeLabelClick
+  end
+  object ConnectButton: TButton
+    Action = ConnectAction
+    Align = Top
+    Enabled = True
+    ImageIndex = -1
+    Position.Y = 48.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+  end
+  object BarcodeManager: TTetheringManager
+    OnEndAutoConnect = BarcodeManagerEndAutoConnect
+    Text = 'BarcodeManager'
+    AllowedAdapters = 'Network'
+    SynchronizeEvents = False
+    Left = 256
+    Top = 128
+  end
+  object BarcodeAppProfile: TTetheringAppProfile
+    Manager = BarcodeManager
+    Text = 'BarcodeAppProfile'
+    Group = 'Barcode'
+    Actions = <>
+    Resources = <>
+    Left = 256
+    Top = 192
+  end
+  object MainActionList: TActionList
+    Left = 72
+    Top = 128
+    object ConnectAction: TAction
+      Text = 'Connect'
+      OnExecute = ConnectActionExecute
+    end
+    object ScanAction: TAction
+      Text = 'Scan'
+      OnExecute = ScanActionExecute
+    end
+  end
+end
