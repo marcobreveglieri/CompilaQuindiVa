@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{29E16EEB-D3F7-4C3A-9712-074A1CF0FB15}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Cqv.Overlays.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Cqv_Overlays">
+        <MSBuild Projects="Cqv.Overlays.dproj"/>
+    </Target>
+    <Target Name="Cqv_Overlays:Clean">
+        <MSBuild Projects="Cqv.Overlays.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Cqv_Overlays:Make">
+        <MSBuild Projects="Cqv.Overlays.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Cqv_Overlays"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Cqv_Overlays:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Cqv_Overlays:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

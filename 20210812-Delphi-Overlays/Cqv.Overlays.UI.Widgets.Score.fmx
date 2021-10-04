@@ -1,0 +1,65 @@
+inherited ScoreWidgetFrame: TScoreWidgetFrame
+  object ScoreLayout: TLayout
+    Align = Center
+    Size.Width = 369.000000000000000000
+    Size.Height = 130.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Score1Label: TLabel
+      Align = Left
+      AutoSize = True
+      StyledSettings = [Family]
+      Size.Width = 120.000000000000000000
+      Size.Height = 130.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 64.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claCrimson
+      TextSettings.HorzAlign = Center
+      Text = '999'
+      TabOrder = 2
+    end
+    object Score2Label: TLabel
+      Align = Right
+      AutoSize = True
+      StyledSettings = [Family]
+      Position.X = 249.000000000000000000
+      Size.Width = 120.000000000000000000
+      Size.Height = 130.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 64.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claMediumblue
+      TextSettings.HorzAlign = Center
+      Text = '999'
+      TabOrder = 1
+    end
+    object TLabel
+      Align = Client
+      AutoSize = True
+      StyledSettings = [Family, Style, FontColor]
+      Size.Width = 129.000000000000000000
+      Size.Height = 130.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 64.000000000000000000
+      TextSettings.HorzAlign = Center
+      Text = '-'
+      TabOrder = 0
+    end
+    object ShadowEffect: TShadowEffect
+      Distance = 4.000000000000000000
+      Direction = 45.000000000000000000
+      Softness = 0.100000001490116100
+      Opacity = 0.800000011920929000
+      ShadowColor = claBlack
+    end
+    object ZoomAnimation: TFloatAnimation
+      AutoReverse = True
+      Duration = 1.000000000000000000
+      PropertyName = 'Scale.Y'
+      StartValue = 1.000000000000000000
+      StartFromCurrent = True
+      StopValue = 3.000000000000000000
+    end
+  end
+end

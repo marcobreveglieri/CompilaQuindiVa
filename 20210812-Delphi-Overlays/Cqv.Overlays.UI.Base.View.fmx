@@ -1,0 +1,51 @@
+object ViewBaseFrame: TViewBaseFrame
+  Align = Client
+  Size.Width = 800.000000000000000000
+  Size.Height = 600.000000000000000000
+  Size.PlatformDefault = False
+  object ViewToolBar: TToolBar
+    Align = Bottom
+    Position.Y = 560.000000000000000000
+    Size.Width = 800.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object ShowWidgetButton: TButton
+      Action = ShowWidgetAction
+      Align = Right
+      Enabled = True
+      ImageIndex = -1
+      Position.X = 590.000000000000000000
+      Size.Width = 105.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+    end
+    object HideWidgetButton: TButton
+      Action = HideWidgetAction
+      Align = Right
+      Enabled = True
+      ImageIndex = -1
+      Position.X = 695.000000000000000000
+      Size.Width = 105.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+    end
+  end
+  object ViewActions: TActionList
+    OnUpdate = ViewActionsUpdate
+    Left = 40
+    Top = 536
+    object ShowWidgetAction: TAction
+      Category = 'View'
+      Text = '&Mostra'
+      OnExecute = ShowWidgetActionExecute
+    end
+    object HideWidgetAction: TAction
+      Category = 'View'
+      Text = '&Nascondi'
+      OnExecute = HideWidgetActionExecute
+    end
+  end
+end
