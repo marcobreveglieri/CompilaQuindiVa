@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1EC498AD-AA59-46F7-A61C-A5F4755D539F}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="RecycleTim.App.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RecycleTim.Tests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="RecycleTim_App">
+        <MSBuild Projects="RecycleTim.App.dproj"/>
+    </Target>
+    <Target Name="RecycleTim_App:Clean">
+        <MSBuild Projects="RecycleTim.App.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RecycleTim_App:Make">
+        <MSBuild Projects="RecycleTim.App.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RecycleTim_Tests">
+        <MSBuild Projects="RecycleTim.Tests.dproj"/>
+    </Target>
+    <Target Name="RecycleTim_Tests:Clean">
+        <MSBuild Projects="RecycleTim.Tests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RecycleTim_Tests:Make">
+        <MSBuild Projects="RecycleTim.Tests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="RecycleTim_App;RecycleTim_Tests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="RecycleTim_App:Clean;RecycleTim_Tests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="RecycleTim_App:Make;RecycleTim_Tests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
