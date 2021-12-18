@@ -1,0 +1,43 @@
+object BasePageFrame: TBasePageFrame
+  Align = Client
+  Size.Width = 435.000000000000000000
+  Size.Height = 709.000000000000000000
+  Size.PlatformDefault = False
+  object PageToolBar: TToolBar
+    Size.Width = 435.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object TitleLabel: TLabel
+      Align = Client
+      StyledSettings = [Family, Style]
+      Size.Width = 395.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 24.000000000000000000
+      TextSettings.HorzAlign = Center
+      Text = '###'
+      TabOrder = 1
+    end
+    object HomeButton: TButton
+      Action = HomeAction
+      Align = Right
+      Enabled = True
+      ImageIndex = -1
+      Position.X = 395.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'actiontoolbutton'
+      TabOrder = 2
+    end
+  end
+  object PageActionList: TActionList
+    Left = 40
+    Top = 48
+    object HomeAction: TAction
+      Text = 'Home'
+      OnExecute = HomeActionExecute
+    end
+  end
+end

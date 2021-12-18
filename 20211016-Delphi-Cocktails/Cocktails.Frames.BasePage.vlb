@@ -1,0 +1,15 @@
+﻿[HomeButton]
+Coordinates=82,10,76,51
+
+[PageToolBar]
+Coordinates=10,71,77,33
+
+[PageActionList]
+Coordinates=195,1,89,33
+
+[TitleLabel]
+Coordinates=10,10,62,51
+
+[HomeAction]
+Coordinates=195,53,74,33
+

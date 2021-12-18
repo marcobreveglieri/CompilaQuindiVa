@@ -1,0 +1,135 @@
+inherited DetailPageFrame: TDetailPageFrame
+  inherited PageToolBar: TToolBar
+    inherited TitleLabel: TLabel
+      Size.Width = 355.000000000000000000
+      Text = 'Dettaglio'
+    end
+    inherited HomeButton: TButton
+      TabOrder = 3
+    end
+    object BackButton: TButton
+      Action = BackAction
+      Align = Left
+      Enabled = True
+      ImageIndex = -1
+      Size.Width = 40.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'arrowlefttoolbutton'
+      TabOrder = 2
+    end
+  end
+  object DrinkLabel: TLabel [1]
+    Align = Top
+    StyledSettings = [Family, Style, FontColor]
+    Position.Y = 40.000000000000000000
+    Size.Width = 435.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 22.000000000000000000
+    TabOrder = 1
+  end
+  object TagLabel: TLabel [2]
+    Align = Top
+    StyledSettings = [Family, Size]
+    Margins.Top = 4.000000000000000000
+    Position.Y = 94.000000000000000000
+    Size.Width = 435.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00040000000200000004000000}
+    TextSettings.FontColor = claBlue
+    TabOrder = 3
+  end
+  object CategoryLabel: TLabel [3]
+    Align = Top
+    StyledSettings = [Family]
+    Position.Y = 73.000000000000000000
+    Size.Width = 435.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 13.000000000000000000
+    TextSettings.FontColor = claBrown
+    TabOrder = 2
+  end
+  object InstructionTitleLabel: TLabel [4]
+    Align = Top
+    Margins.Top = 16.000000000000000000
+    Position.Y = 127.000000000000000000
+    Size.Width = 435.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Istruzioni per la preparazione'
+    TabOrder = 4
+  end
+  object InstructionMemo: TMemo [5]
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    ReadOnly = True
+    TextSettings.WordWrap = True
+    Align = Top
+    Position.Y = 144.000000000000000000
+    Size.Width = 435.000000000000000000
+    Size.Height = 145.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Viewport.Width = 431.000000000000000000
+    Viewport.Height = 141.000000000000000000
+  end
+  object ImageWebBrowser: TWebBrowser [6]
+    Align = Client
+    Size.Width = 435.000000000000000000
+    Size.Height = 420.000000000000000000
+    Size.PlatformDefault = False
+    WindowsEngine = EdgeIfAvailable
+  end
+  inherited PageActionList: TActionList
+    Top = 72
+    object BackAction: TAction
+      Text = 'Torna indietro'
+      OnExecute = BackActionExecute
+    end
+  end
+  object DetailBindingsList: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 44
+    Top = 125
+    object LinkPropertyToFieldText: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = AppModule.DrinkBindSource
+      FieldName = 'strDrink'
+      Component = DrinkLabel
+      ComponentProperty = 'Text'
+    end
+    object LinkPropertyToFieldText2: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = AppModule.DrinkBindSource
+      FieldName = 'strTags'
+      Component = TagLabel
+      CustomFormat = '"Tags: " + %s'
+      ComponentProperty = 'Text'
+    end
+    object LinkPropertyToFieldText3: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = AppModule.DrinkBindSource
+      FieldName = 'strCategory'
+      Component = CategoryLabel
+      ComponentProperty = 'Text'
+    end
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = AppModule.DrinkBindSource
+      FieldName = 'strInstructionsIT'
+      Control = InstructionMemo
+      Track = False
+    end
+    object LinkPropertyToFieldURL: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = AppModule.DrinkBindSource
+      FieldName = 'strDrinkThumb'
+      Component = ImageWebBrowser
+      ComponentProperty = 'URL'
+    end
+  end
+end

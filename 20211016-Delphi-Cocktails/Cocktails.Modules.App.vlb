@@ -1,0 +1,10 @@
+﻿[DrinkTable]
+Visible=False
+Coordinates=169,53,67,33
+
+[RESTAdapterSearch]
+Coordinates=169,1,115,33
+
+[DrinkBindSource]
+Coordinates=0,0,98,69
+

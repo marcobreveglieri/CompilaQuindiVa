@@ -1,0 +1,74 @@
+inherited SearchPageFrame: TSearchPageFrame
+  inherited PageToolBar: TToolBar
+    inherited TitleLabel: TLabel
+      Text = 'Ricerca'
+    end
+  end
+  object SearchLayout: TLayout [1]
+    Align = Top
+    Position.Y = 40.000000000000000000
+    Size.Width = 435.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object SearchEdit: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Client
+      TabOrder = 0
+      Size.Width = 384.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object SearchButton: TButton
+      Action = SearchAction
+      Align = Right
+      Enabled = True
+      ImageIndex = -1
+      Position.X = 384.000000000000000000
+      Size.Width = 51.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'searchtoolbutton'
+      TabOrder = 1
+    end
+  end
+  object DrinkListView: TListView [2]
+    ItemAppearanceClassName = 'TListItemRightDetailAppearance'
+    ItemEditAppearanceClassName = 'TListItemRightDetailDeleteAppearance'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    Align = Client
+    Size.Width = 435.000000000000000000
+    Size.Height = 619.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    ItemAppearanceObjects.ItemObjects.Text.Font.StyleExt = {00070000000000000004000000}
+    OnItemClick = DrinkListViewItemClick
+  end
+  inherited PageActionList: TActionList
+    OnUpdate = PageActionListUpdate
+    object SearchAction: TAction
+      Text = 'Search'
+      OnExecute = SearchActionExecute
+    end
+  end
+  object SearchBindingList: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 52
+    Top = 453
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = AppModule.DrinkBindSource
+      FieldName = 'strDrink'
+      Control = DrinkListView
+      FillExpressions = <
+        item
+          SourceMemberName = 'strCategory'
+          ControlMemberName = 'Detail'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+end

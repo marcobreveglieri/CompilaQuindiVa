@@ -1,0 +1,2 @@
+inherited AboutPageFrame: TAboutPageFrame
+end
