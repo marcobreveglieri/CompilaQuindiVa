@@ -1,0 +1,387 @@
+object MainForm: TMainForm
+  Left = 0
+  Top = 0
+  Caption = 'KuFu!'
+  ClientHeight = 613
+  ClientWidth = 873
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object MainToolBar: TToolBar
+    Margins.Bottom = 4.000000000000000000
+    Size.Width = 873.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object ProjectImportButton: TButton
+      Action = ProjectImportAction
+      Align = Left
+      Enabled = True
+      ImageIndex = -1
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.X = 4.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 125.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+    end
+    object FileExitButton: TButton
+      Action = FileExitAction
+      Align = Right
+      Enabled = True
+      ImageIndex = 43
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.X = 789.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+    end
+    object EditPictureButton: TButton
+      Action = EditPictureAction
+      Align = Left
+      Enabled = True
+      ImageIndex = -1
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.X = 282.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 125.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+    end
+    object ProjectExportButton: TButton
+      Action = ProjectExportAction
+      Align = Left
+      Enabled = True
+      ImageIndex = -1
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.X = 137.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 125.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+    end
+  end
+  object LeftLayout: TLayout
+    Align = Left
+    Position.Y = 44.000000000000000000
+    Size.Width = 449.000000000000000000
+    Size.Height = 524.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object VipGrid: TStringGrid
+      Align = Client
+      CanFocus = True
+      ClipChildren = True
+      Size.Width = 449.000000000000000000
+      Size.Height = 467.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      RowCount = 1
+      Viewport.Width = 445.000000000000000000
+      Viewport.Height = 442.000000000000000000
+    end
+    object VipNavigator: TBindNavigator
+      Align = Bottom
+      Position.Y = 467.000000000000000000
+      Size.Width = 449.000000000000000000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      DataSource = VipBindSource
+      xRadius = 4.000000000000000000
+      yRadius = 4.000000000000000000
+    end
+  end
+  object MainSplitter: TSplitter
+    Align = Left
+    Cursor = crHSplit
+    MinSize = 20.000000000000000000
+    Position.X = 449.000000000000000000
+    Position.Y = 44.000000000000000000
+    Size.Width = 16.000000000000000000
+    Size.Height = 524.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object RightLayout: TLayout
+    Align = Client
+    Size.Width = 408.000000000000000000
+    Size.Height = 524.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    object VipImage: TImage
+      MultiResBitmap.Height = 1440
+      MultiResBitmap.Width = 1035
+      MultiResBitmap = <
+        item
+        end>
+      Align = Client
+      Size.Width = 408.000000000000000000
+      Size.Height = 467.000000000000000000
+      Size.PlatformDefault = False
+      object VipPixelateEffect: TPixelateEffect
+        Enabled = False
+        BlockCount = 25.000000000000000000
+      end
+    end
+    object PictureToolBar: TToolBar
+      Align = Bottom
+      Position.Y = 467.000000000000000000
+      Size.Width = 408.000000000000000000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object PreviewSwitch: TSwitch
+        Align = Left
+        IsChecked = False
+        Margins.Left = 4.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 4.000000000000000000
+        Size.Width = 78.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+      end
+      object PreviewLabel: TLabel
+        Align = Client
+        Size.Width = 322.000000000000000000
+        Size.Height = 57.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Anteprima effetto'
+        TabOrder = 2
+      end
+    end
+  end
+  object PictureOpenDialog: TOpenDialog
+    Title = 'Seleziona una foto da importare'
+    Left = 504
+    Top = 248
+  end
+  object ProjectOpenDialog: TOpenDialog
+    Title = 'Seleziona il file da cui importare i dati'
+    Left = 640
+    Top = 248
+  end
+  object ProjectSaveDialog: TSaveDialog
+    Title = 'Seleziona il file in cui salvare i dati'
+    Left = 768
+    Top = 248
+  end
+  object LivePanel: TPanel
+    Align = Bottom
+    Position.Y = 568.000000000000000000
+    Size.Width = 873.000000000000000000
+    Size.Height = 45.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 14
+    object LiveShowButton: TButton
+      Action = LiveShowAction
+      Align = Left
+      Enabled = True
+      ImageIndex = -1
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.X = 4.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 125.000000000000000000
+      Size.Height = 37.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+    end
+    object LiveHideButton: TButton
+      Action = LiveHideAction
+      Align = Left
+      Enabled = True
+      ImageIndex = -1
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.X = 137.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 125.000000000000000000
+      Size.Height = 37.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+    end
+    object EffectTrackBar: TTrackBar
+      Align = Right
+      CanParentFocus = True
+      Max = 150.000000000000000000
+      Min = 25.000000000000000000
+      Orientation = Horizontal
+      Margins.Left = 8.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 8.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 568.000000000000000000
+      Position.Y = 13.000000000000000000
+      Size.Width = 297.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Value = 25.000000000000000000
+      OnChange = EffectTrackBarChange
+    end
+    object LiveRevealButton: TButton
+      Action = LiveRevealAction
+      Align = Left
+      Enabled = True
+      ImageIndex = -1
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.X = 282.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 125.000000000000000000
+      Size.Height = 37.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+    end
+  end
+  object VipTable: TFDMemTable
+    ActiveStoredUsage = []
+    FieldDefs = <
+      item
+        Name = 'VipId'
+        DataType = ftAutoInc
+      end
+      item
+        Name = 'VipName'
+        Attributes = [faRequired]
+        DataType = ftString
+        Size = 50
+      end
+      item
+        Name = 'VipPicture'
+        DataType = ftBlob
+      end>
+    IndexDefs = <
+      item
+        Name = 'VipTablePrimaryKey'
+        Fields = 'VipId'
+        Options = [ixPrimary, ixUnique]
+      end>
+    Indexes = <
+      item
+        Active = True
+        Name = 'VipTablePrimaryKey'
+        Fields = 'VipId'
+        Options = [soUnique, soPrimary]
+      end>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvPersistent, rvSilentMode]
+    ResourceOptions.Persistent = True
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    StoreDefs = True
+    Left = 504
+    Top = 64
+  end
+  object VipBindSource: TBindSourceDB
+    DataSet = VipTable
+    ScopeMappings = <>
+    Left = 640
+    Top = 160
+  end
+  object MainBindingList: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 504
+    Top = 160
+    object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = VipBindSource
+      GridControl = VipGrid
+      Columns = <>
+    end
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = VipBindSource
+      FieldName = 'VipPicture'
+      Control = VipImage
+      Track = False
+    end
+    object LinkControlToPropertyEnabled: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = PreviewSwitch
+      Track = True
+      Component = VipPixelateEffect
+      ComponentProperty = 'Enabled'
+    end
+  end
+  object MainActionList: TActionList
+    OnUpdate = MainActionListUpdate
+    Left = 640
+    Top = 64
+    object FileExitAction: TFileExit
+      Category = 'File'
+      CustomText = 'Esci'
+      Hint = 'Esci|Esci dall'#39'applicazione'
+      ImageIndex = 43
+      ImageIndex = 43
+    end
+    object EditPictureAction: TAction
+      Category = 'Edit'
+      Text = 'Importa foto'
+      Hint = 'Importa foto|Importa una foto da file'
+      OnExecute = EditPictureActionExecute
+    end
+    object ProjectImportAction: TAction
+      Category = 'Project'
+      Text = 'Importa progetto...'
+      Hint = 'Importa progetto|Importa i dati di un progetto da file'
+      OnExecute = ProjectImportActionExecute
+    end
+    object ProjectExportAction: TAction
+      Category = 'Project'
+      Text = 'Esporta progetto...'
+      Hint = 'Esporta progetto|Esporta i dati del progetto su file'
+      OnExecute = ProjectExportActionExecute
+    end
+    object LiveShowAction: TAction
+      Category = 'Live'
+      Text = 'Mostra finestra'
+      OnExecute = LiveShowActionExecute
+    end
+    object LiveHideAction: TAction
+      Category = 'Live'
+      Text = 'Nascondi finestra'
+      OnExecute = LiveHideActionExecute
+    end
+    object LiveRevealAction: TAction
+      Category = 'Live'
+      Text = 'Rivela VIP'
+      OnExecute = LiveRevealActionExecute
+    end
+  end
+end

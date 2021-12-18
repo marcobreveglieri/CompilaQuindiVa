@@ -1,0 +1,88 @@
+object LiveForm: TLiveForm
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = Single
+  Caption = 'KuFu! Live Window'
+  ClientHeight = 640
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object VipRectangle: TRectangle
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 640.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Thickness = 40.000000000000000000
+    object VipImage: TImage
+      MultiResBitmap.Height = 1080
+      MultiResBitmap.Width = 1080
+      MultiResBitmap = <
+        item
+        end>
+      Align = Client
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 16.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Margins.Bottom = 16.000000000000000000
+      Size.Width = 608.000000000000000000
+      Size.Height = 608.000000000000000000
+      Size.PlatformDefault = False
+      object VipPixelateEffect: TPixelateEffect
+        BlockCount = 150.000000000000000000
+      end
+    end
+  end
+  object VipNameRectangle: TRectangle
+    Position.Y = 504.000000000000000000
+    Size.Width = 457.000000000000000000
+    Size.Height = 81.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = Gradient
+    Stroke.Gradient.Points = <
+      item
+        Color = xFF729FE8
+        Offset = 0.000000000000000000
+      end
+      item
+        Color = xFF4A8CF9
+        Offset = 1.000000000000000000
+      end>
+    Stroke.Gradient.StartPosition.X = 0.500000000000000000
+    Stroke.Gradient.StartPosition.Y = 1.000000000000000000
+    Stroke.Gradient.StopPosition.X = 0.499999970197677600
+    Stroke.Gradient.StopPosition.Y = 0.000000000000000000
+    Stroke.Thickness = 3.000000000000000000
+    object VipNameLabel: TLabel
+      Align = Client
+      StyledSettings = [Family, Style]
+      Margins.Left = 32.000000000000000000
+      Margins.Top = 16.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Margins.Bottom = 16.000000000000000000
+      Size.Width = 409.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 32.000000000000000000
+      TextSettings.FontColor = claDarkblue
+      TextSettings.WordWrap = False
+      Text = 'Vip Name'
+      TabOrder = 0
+    end
+    object VipNameAnimation: TFloatAnimation
+      Duration = 1.000000000000000000
+      OnFinish = VipNameAnimationFinish
+      PropertyName = 'Position.X'
+      StartValue = -480.000000000000000000
+      StopValue = -8.000000000000000000
+    end
+    object GlowEffect: TGlowEffect
+      Softness = 0.400000005960464500
+      GlowColor = claDeepskyblue
+      Opacity = 0.899999976158142100
+    end
+  end
+end
