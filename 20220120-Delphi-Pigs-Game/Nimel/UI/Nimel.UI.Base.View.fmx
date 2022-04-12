@@ -1,0 +1,6 @@
+object BaseView: TBaseView
+  Align = Client
+  Size.Width = 980.000000000000000000
+  Size.Height = 640.000000000000000000
+  Size.PlatformDefault = False
+end

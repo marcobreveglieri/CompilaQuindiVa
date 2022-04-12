@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E876F8B8-FF75-41BB-80C5-4F797251B298}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="NimelApp.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="NimelApp">
+        <MSBuild Projects="NimelApp.dproj"/>
+    </Target>
+    <Target Name="NimelApp:Clean">
+        <MSBuild Projects="NimelApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NimelApp:Make">
+        <MSBuild Projects="NimelApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="NimelApp"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="NimelApp:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="NimelApp:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

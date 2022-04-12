@@ -1,0 +1,10 @@
+inherited WinnerView: TWinnerView
+  object Button1: TButton
+    Align = Client
+    Size.Width = 980.000000000000000000
+    Size.Height = 640.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'Button1'
+  end
+end
